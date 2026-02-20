@@ -1,27 +1,13 @@
-import { StyleSheet } from 'react-native';
-import { SafeAreaProvider } from 'react-native-safe-area-context';
+import React from 'react';
+import { View } from 'react-native';
 import AppNav from './src/navigations';
 
-function App() {
+const App = () => {
   return (
-    <SafeAreaProvider style={styles.container}>
+    <View style={{ flex: 1 }}>
       <AppNav />
-    </SafeAreaProvider>
+    </View>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    // backgroundColor: '#fff',
-    // justifyContent: 'center',
-    // alignItems: 'center',
-  },
-});
-
-export default App;
-    flex: 1,
-  },
-});
+};
 
 export default App;

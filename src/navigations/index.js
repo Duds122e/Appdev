@@ -1,10 +1,32 @@
-import { NavigationContainer } from '@react-navigation/native';
-import MainNavigation from './MainNav';
+import { createStackNavigator } from '@react-navigation/stack';
 
-export default function AppNav() {
+// screens
+import HomeScreen from '../screens/HomeScreen';
+import ProfileScreen from '../screens/ProfileScreen';
+import Login from '../screens/auth/Login';
+import Register from '../screens/auth/Register';
+
+// utils
+import { NavigationContainer } from '@react-navigation/native';
+import { ROUTES } from '../utils';
+
+const Stack = createStackNavigator();
+
+const MainNavigation = () => {
+  return (
+    <Stack.Navigator initialRouteName={ROUTES.LOGIN}>
+      <Stack.Screen name={ROUTES.LOGIN} component={Login} options={{ title: 'Login' }} />
+      <Stack.Screen name={ROUTES.REGISTER} component={Register} options={{ title: 'Register' }} />
+      <Stack.Screen name={ROUTES.HOME} component={HomeScreen} options={{ title: 'Home' }} />
+      <Stack.Screen name={ROUTES.PROFILE} component={ProfileScreen} options={{ title: 'Profile' }} />
+    </Stack.Navigator>
+  );
+};
+
+export default () => {
   return (
     <NavigationContainer>
       <MainNavigation />
     </NavigationContainer>
   );
-}
+};
