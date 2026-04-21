@@ -2,8 +2,8 @@ buildscript {
     ext {
         buildToolsVersion = "36.0.0"
         minSdkVersion = 24
-        compileSdkVersion = 36
-        targetSdkVersion = 36
+        compileSdkVersion = 35
+        targetSdkVersion = 35
         ndkVersion = "27.1.12297006"
         kotlinVersion = "2.1.20"
     }
@@ -15,6 +15,17 @@ buildscript {
         classpath("com.android.tools.build:gradle")
         classpath("com.facebook.react:react-native-gradle-plugin")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin")
+    }
+}
+
+allprojects {
+    repositories {
+        // ... others like google(), mavenCentral()
+
+        maven {
+            url = uri(project(":react-native-async-storage_async-storage").file("local_repo"))
+            // or uri("path/to/node_modules/@react-native-async-storage/async-storage/android/local_repo")
+        }
     }
 }
 
