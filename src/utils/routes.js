@@ -1,6 +1,10 @@
 export default {
-  // [Object]: Attribute
-  HOME: "Home",
-  PROFILE: "Profile",
-  LOGIN: "Login"
-} 
+    // Auth
+    LOGIN: 'Login',
+    REGISTER: 'Register',
+    ERRORSCREEN: 'ErrorScreen',
+
+    // Main
+    HOME: 'Home',
+    PROFILE: 'Profile',
+};
